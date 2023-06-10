@@ -1,0 +1,2307 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="introvscode.html">
+      
+      
+        <link rel="next" href="links.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
+    
+    
+      
+        <title>Introduktion til programmering - JavaScript for webudviklere</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduktion-til-programmering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="JavaScript for webudviklere" class="md-header__button md-logo" aria-label="JavaScript for webudviklere" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JavaScript for webudviklere
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduktion til programmering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="white"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        Introduktion
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="introjs.html" class="md-tabs__link">
+      Introduktion til Javascript
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01Indledning.html" class="md-tabs__link">
+        Programmering med JavaScript
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="programmeringmeddom.html" class="md-tabs__link">
+      DOM
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="opgaver.html" class="md-tabs__link">
+        Opgaver
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="intro.html" class="md-tabs__link md-tabs__link--active">
+        Intro til...
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="links.html" class="md-tabs__link">
+      Links
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="openai.html" class="md-tabs__link">
+      Open AI
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="JavaScript for webudviklere" class="md-nav__button md-logo" aria-label="JavaScript for webudviklere" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    JavaScript for webudviklere
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Introduktion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduktion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Programmering med JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introjs.html" class="md-nav__link">
+        Introduktion til Javascript
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Programmering med JavaScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Programmering med JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01Indledning.html" class="md-nav__link">
+        Sproget
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02Variabler.html" class="md-nav__link">
+        Variabler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03Flow.html" class="md-nav__link">
+        Flow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04Array.html" class="md-nav__link">
+        Array
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05RegEx.html" class="md-nav__link">
+        RegEx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06Funktioner.html" class="md-nav__link">
+        Funktioner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07Fejlh%C3%A5ndtering.html" class="md-nav__link">
+        Errorhandling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08Objekter.html" class="md-nav__link">
+        Objekter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09Klasser.html" class="md-nav__link">
+        Objekteret programmering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10Moduler.html" class="md-nav__link">
+        Moduler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11Async.html" class="md-nav__link">
+        ASync
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="programmeringmeddom.html" class="md-nav__link">
+        DOM
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Opgaver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Opgaver
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opgaver.html" class="md-nav__link">
+        Indledning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opgaverjs.html" class="md-nav__link">
+        Opgaver til JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opgaverdom.html" class="md-nav__link">
+        Opgaver til DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opgaverhtml.html" class="md-nav__link">
+        Opgaver til HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opgavercss.html" class="md-nav__link">
+        Opgaver til CSS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Intro til...
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Intro til...
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intro.html" class="md-nav__link">
+        Indledning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introhttp.html" class="md-nav__link">
+        Introduktion til HTTP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introhtml.html" class="md-nav__link">
+        Introduktion til HTML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introcss.html" class="md-nav__link">
+        Introduktion til CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introjs.html" class="md-nav__link">
+        Introduktion til JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introts.html" class="md-nav__link">
+        Introduktion til TypeScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="intronodejs.html" class="md-nav__link">
+        Introduktion til NodeJS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introwebapp.html" class="md-nav__link">
+        Introduktion til web apps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introdom.html" class="md-nav__link">
+        Introduktion til DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introjquery.html" class="md-nav__link">
+        Introduktion til jQuery
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introvuejs.html" class="md-nav__link">
+        Introduktion til VueJS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introvscode.html" class="md-nav__link">
+        Introduktion til VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduktion til programmering
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introprogrammering.html" class="md-nav__link md-nav__link--active">
+        Introduktion til programmering
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#den-korte-historie" class="md-nav__link">
+    Den korte historie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#begreber-inden-for-softwareudvikling" class="md-nav__link">
+    Begreber inden for softwareudvikling
+  </a>
+  
+    <nav class="md-nav" aria-label="Begreber inden for softwareudvikling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prv-det-selv" class="md-nav__link">
+    Prøv det selv
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#talsystemer" class="md-nav__link">
+    Talsystemer
+  </a>
+  
+    <nav class="md-nav" aria-label="Talsystemer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#den-lille-tabel" class="md-nav__link">
+    Den lille tabel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-det-binre-talsystem-pa" class="md-nav__link">
+    Lær det binære talsystem på
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#betegnelser" class="md-nav__link">
+    Betegnelser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forkortelser" class="md-nav__link">
+    Forkortelser
+  </a>
+  
+    <nav class="md-nav" aria-label="Forkortelser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    Bit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bytes" class="md-nav__link">
+    Bytes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binr-aritmetik" class="md-nav__link">
+    Binær aritmetik
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#det-hexadecimale-talsystem" class="md-nav__link">
+    Det hexadecimale talsystem
+  </a>
+  
+    <nav class="md-nav" aria-label="Det hexadecimale talsystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lr-det-hexadecimale-talsystem-pa" class="md-nav__link">
+    Lær det hexadecimale talsystem på
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typer-af-tal" class="md-nav__link">
+    Typer af tal
+  </a>
+  
+    <nav class="md-nav" aria-label="Typer af tal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heltal" class="md-nav__link">
+    Heltal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kommatal" class="md-nav__link">
+    Kommatal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udfordringer" class="md-nav__link">
+    Udfordringer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kontakter" class="md-nav__link">
+    Kontakter
+  </a>
+  
+    <nav class="md-nav" aria-label="Kontakter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rel" class="md-nav__link">
+    Relæ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vakuumrr" class="md-nav__link">
+    Vakuumrør
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transistor" class="md-nav__link">
+    Transistor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logiske-kredslb" class="md-nav__link">
+    Logiske kredsløb
+  </a>
+  
+    <nav class="md-nav" aria-label="Logiske kredsløb">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sandhedstabeller" class="md-nav__link">
+    Sandhedstabeller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gates-af-elektronik" class="md-nav__link">
+    Gates af elektronik
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moores-lov" class="md-nav__link">
+    Moores lov
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lidt-historie" class="md-nav__link">
+    Lidt historie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beregning-med-logiske-kredslb" class="md-nav__link">
+    Beregning med logiske kredsløb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alu-arithmetic-logic-unit" class="md-nav__link">
+    ALU (Arithmetic logic unit)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hukommelse" class="md-nav__link">
+    Hukommelse
+  </a>
+  
+    <nav class="md-nav" aria-label="Hukommelse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#or-latch" class="md-nav__link">
+    OR Latch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-reset-and-or-latch" class="md-nav__link">
+    Set Reset AND-OR latch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ram-intro" class="md-nav__link">
+    RAM intro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hjertet-i-en-cpu-clock" class="md-nav__link">
+    Hjertet i en CPU (clock)
+  </a>
+  
+    <nav class="md-nav" aria-label="Hjertet i en CPU (clock)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hertz" class="md-nav__link">
+    Hertz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#michells-sap1-simulering" class="md-nav__link">
+    Michells SAP1 simulering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opkoder-og-maskinkode" class="md-nav__link">
+    opkoder og maskinkode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altair" class="md-nav__link">
+    Altair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lg-2-to-tal-sammen-fra-ram" class="md-nav__link">
+    Læg 2 to tal sammen fra RAM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digirule2" class="md-nav__link">
+    Digirule2
+  </a>
+  
+    <nav class="md-nav" aria-label="Digirule2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lg-2-to-tal-sammen-fra-ram_1" class="md-nav__link">
+    Læg 2 to tal sammen fra RAM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moderne-processorer" class="md-nav__link">
+    Moderne processorer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kompilere-og-programmeringssprog" class="md-nav__link">
+    Kompilere og programmeringssprog
+  </a>
+  
+    <nav class="md-nav" aria-label="Kompilere og programmeringssprog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programmeringssprog" class="md-nav__link">
+    Programmeringssprog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntaks-og-instruktioner" class="md-nav__link">
+    Syntaks og instruktioner
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntaks og instruktioner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eksempler-pa-syntaks" class="md-nav__link">
+    Eksempler på syntaks
+  </a>
+  
+    <nav class="md-nav" aria-label="Eksempler på syntaks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maskinkode" class="md-nav__link">
+    Maskinkode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembler" class="md-nav__link">
+    Assembler
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic" class="md-nav__link">
+    Basic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cobol" class="md-nav__link">
+    Cobol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortran" class="md-nav__link">
+    Fortran
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pascal" class="md-nav__link">
+    Pascal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smalltalk" class="md-nav__link">
+    Smalltalk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    C++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    F
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby" class="md-nav__link">
+    Ruby
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grundlggende-programmering" class="md-nav__link">
+    Grundlæggende programmering
+  </a>
+  
+    <nav class="md-nav" aria-label="Grundlæggende programmering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typer-af-applikationer" class="md-nav__link">
+    Typer af applikationer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udviklingsvrktjer" class="md-nav__link">
+    Udviklingsværktøjer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versionsource-control" class="md-nav__link">
+    Version/source control
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="links.html" class="md-nav__link">
+        Links
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="openai.html" class="md-nav__link">
+        Open AI
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="introduktion-til-programmering">Introduktion til programmering</h1>
+<p>Formålet med programmering er, at skabe en samling instruktioner for at automatisere en process på en computer (typisk afviklet i et standardiseret operativsystem).</p>
+<h2 id="den-korte-historie">Den korte historie</h2>
+<ul>
+<li>Har rødder helt tilbage til <a href="https://en.wikipedia.org/wiki/Charles_Babbage">Charles Babbage&rsquo;s</a> mekaniske computer kaldet <a href="https://en.wikipedia.org/wiki/Analytical_Engine">Analytical Engine</a> fra omkring 1837 (183 år siden). Her skrev <a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace</a> i 1843 det første (teoretiske) computerprogram</li>
+</ul>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/AnalyticalMachine_Babbage_London.jpg/440px-AnalyticalMachine_Babbage_London.jpg' /> </p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Herman_Hollerith">Herman Hollerith</a> skabte omkring 1885 (135 år siden) sin programmerbare &ldquo;Electromechanical punched card tabulator&rdquo; som blev brugt til folkeoptælling. Hans firma blev senere (1925) omdøbt til IBM.</li>
+</ul>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://www.ibm.com/ibm/history/ibm100/images/icp/I948157I46677K94/us__en_us__ibm100__tabulator__hollerith_machine__620x350.jpg' /> </p>
+
+<ul>
+<li>Under 2. verdenskrig dukkede de første elektroniske computere op </li>
+<li>Tyskernes <a href="https://en.wikipedia.org/wiki/Z3_(computer)">Z3-computer</a> baseret på relæer</li>
+<li>Englændernes <a href="https://en.wikipedia.org/wiki/Bombe">Bombe</a> brugt til at bryde tyskernes Enigma kodemaskine. Skabt blandt andet af <a href="https://en.wikipedia.org/wiki/Alan_Turing">Alan Turing</a>, som har haft kæmpe indflydelse på computer teknologi<ul>
+<li>Udgav en del afhandling, og beskrev blandt andet <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing Machine</a> hvis teorier satte IT teknologien igang</li>
+<li>Se filmen <a href="https://en.wikipedia.org/wiki/The_Imitation_Game">The Imitation Game</a></li>
+</ul>
+</li>
+</ul>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Wartime_picture_of_a_Bletchley_Park_Bombe.jpg/440px-Wartime_picture_of_a_Bletchley_Park_Bombe.jpg' /> </p>
+
+<ul>
+<li>1952 blev den første (britiske) kommercielle computer udviklet - <a href="https://en.wikipedia.org/wiki/Ferranti_Mark_1">Ferranti Mark I</a></li>
+<li>I 1960&rsquo;erne udviklere MIT og NASA operativsystemerne bag Apollo-missionerne</li>
+<li><a href="https://www.nasa.gov/feature/margaret-hamilton-apollo-software-engineer-awarded-presidential-medal-of-freedom">Ikonisk billede</a> af Margaret Hammilton med source koden til Apollo skevet i Assembler</li>
+</ul>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/margaret_hamilton5.jpg?itok=ffXdKPCA' /> </p>
+
+<h2 id="begreber-inden-for-softwareudvikling">Begreber inden for softwareudvikling</h2>
+<ul>
+<li>Instruktioner til CPU skrives i <strong>kildekode/source</strong> code</li>
+<li>Der findes et hav af forskellige programmeringssprog</li>
+<li>Kildekode kompileres herefter til en for processoren forståelige instruktioner</li>
+<li>Det er som alt muligt andet et håndværk at &ldquo;skrive kode&rdquo;<ul>
+<li><a href="https://en.wikipedia.org/wiki/Programming_paradigm">Programmeringsparadigmer</a></li>
+<li>Iterativ</li>
+<li>Procedural</li>
+<li>Objektorientert</li>
+<li>Funktionsorienteret</li>
+<li>Opmærkningsbaseret</li>
+<li>Visuelt</li>
+<li><a href="https://en.wikipedia.org/wiki/Software_architecture">IT Arkitektur</a></li>
+</ul>
+</li>
+<li>Programmering handler typisk om at styre programpointeren til at afvikle instruktioner, og alle moderne programmeringssprog indeholder typisk (i en eller anden form)</li>
+<li>Variabler</li>
+<li>Flow instruktioner<ul>
+<li>Løkker</li>
+<li>Betingelser</li>
+</ul>
+</li>
+<li>Metoder/Funktioner</li>
+<li>Der kan opstå fejl i koden - også kaldet <a href="https://en.wikipedia.org/wiki/Software_bug">bugs</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_bug#/media/File:H96566k.jpg">Ikonisk billede</a> af &ldquo;en bug&rdquo; fra en relæ computer (MARK II) i 1946. Bug fundet af [Grace Hopper] - en af pionerne bag programmeringssprog (herunder COBOL)</li>
+</ul>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg' width='300' /> </p>
+
+<ul>
+<li>Fejlfinding / debugging er derfor en stor del af software udvikling.</li>
+<li>Applikationer testes på forskellig vis</li>
+<li>Unit test</li>
+<li>UI test</li>
+<li>Integration test</li>
+</ul>
+<h3 id="prv-det-selv">Prøv det selv</h3>
+<p>Software udvikling kan godt - i begrænset form - ske visuelt.</p>
+<p>Prøv selv på <a href="https://hourofcode.com/dk">Hour of Code</a> - eksempelvis <a href="https://blockly.games/maze?lang=da&amp;level=1&amp;skin=0">blockly.games</a>. </p>
+<p><img alt="" src="https://code.org/images/fill-480x360/tutorials/resubmission/codeorg.jpg" /></p>
+<p>Alternativ <a href="https://appinventor.mit.edu/">AppInventor</a> - Android (og iOS), eller <a href="https://microbit.org/">MicroBit</a>.</p>
+<h2 id="talsystemer">Talsystemer</h2>
+<p>Den klassiske computer er baseret på det binære talsystem</p>
+<ul>
+<li>til/fra</li>
+<li>spænding/ikke spænding</li>
+</ul>
+<p>Baseret på to værdier (typisk 0 og 1) kan man repræsentere alle tal (hvis man har plads nok)</p>
+<h3 id="den-lille-tabel">Den lille tabel</h3>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/tal2-tabel.png" /></p>
+<h3 id="lr-det-binre-talsystem-pa">Lær det binære talsystem på</h3>
+<ul>
+<li><a href="https://csdemo.cronberg.dk/numbers.html">csdemo om nummersystemer</a></li>
+<li><a href="https://csdemo.cronberg.dk/quiz_binary.html">Quiz hos csdemo om konvertering til binære tal</a></li>
+</ul>
+<h3 id="betegnelser">Betegnelser</h3>
+<ul>
+<li>1 = bit</li>
+<li>4 = nibble</li>
+<li>8 = byte</li>
+<li>8/16/32/64 = word</li>
+</ul>
+<h3 id="forkortelser">Forkortelser</h3>
+<h4 id="bit">Bit</h4>
+<ul>
+<li>1 Kb = 1.024 bit (128 bytes)</li>
+<li>1 Mb = 1.048.576 bit </li>
+<li>1 Gb = 1.073.741.824 bit </li>
+<li>1 Tb = 1.099.511.627.776 bit </li>
+</ul>
+<h4 id="bytes">Bytes</h4>
+<ul>
+<li>1 KB = 1.024 bytes</li>
+<li>1 MB = 1.048.576 bytes</li>
+<li>1 GB = 1.073.741.824 bit </li>
+<li>1 TB = 1.099.511.627.776 bit </li>
+</ul>
+<h3 id="binr-aritmetik">Binær aritmetik</h3>
+<p>Man kan foretage alle former for beregninger i det binære talsystem ligesom i det decimale talsystem - eksempelvis addition</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/addition1.png" /></p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/addition2.png" /></p>
+<p>Se eksempler på <a href="https://en.wikipedia.org/wiki/Binary_number#Binary_arithmetic">forskellige typer af beregninger</a> hos WikiPedia.</p>
+<h2 id="det-hexadecimale-talsystem">Det hexadecimale talsystem</h2>
+<p>I IT teknologier vil du også møde det hexadecimale talsystem som tæller 0-15</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/hex.png" /></p>
+<h3 id="lr-det-hexadecimale-talsystem-pa">Lær det hexadecimale talsystem på</h3>
+<ul>
+<li><a href="https://csdemo.cronberg.dk/numbers.html">csdemo om nummersystemer</a></li>
+<li><a href="https://csdemo.cronberg.dk/quiz_hex.html">Quiz hos csdemo om konvertering til hexadecimale tal</a></li>
+</ul>
+<h2 id="typer-af-tal">Typer af tal</h2>
+<p>Generelt findes der heltal (signed (-+) og unsigned (+)) og kommatal.</p>
+<h3 id="heltal">Heltal</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Bites</th>
+<th>Spænd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lille positivt heltal</td>
+<td>8</td>
+<td>0 til 255</td>
+</tr>
+<tr>
+<td>Stort positivt heltal</td>
+<td>16</td>
+<td>0 til 65.536</td>
+</tr>
+<tr>
+<td>Meget stort positivt heltal</td>
+<td>64</td>
+<td>0 til 18.446.744.073.709.551.616</td>
+</tr>
+<tr>
+<td>Stort positivt og negativt heltal</td>
+<td>32</td>
+<td>-2.147.483.648 til +2.147.483.647</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kommatal">Kommatal</h3>
+<p>Der er flere måder at beskrive et kommatal på. De fleste CPU&rsquo;er har indbygget <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> repræsentation, som er en måde at beskrive et kommatal. Det er super hurtigt men ikke helt præcist på de yderste decimaler. Konvertering til floating point kan være ret kompleks men <a href="http://fabiensanglard.net/floating_point_visually_explained/">denne artikel</a> forklarer det ret godt. </p>
+<p>De fleste programmeringssprog tilbyder også andre muligheder for repræsentation af kommatal.</p>
+<h3 id="udfordringer">Udfordringer</h3>
+<p>Hvis der vælges forkerte typer af heltal og kommatal kan det skabe fejl som kan være svære at finde. Se eksempelvis <a href="http://goo.gl/KhHT6">Engineering Disasters 13 - Software Flaws</a> på YouTube. Her beskrives eksempelvis software fejl i amerikanernes Patriot missiler under Golfkrigen i starten af 90&rsquo;erne.</p>
+<h2 id="kontakter">Kontakter</h2>
+<p>Alle processorer er skabt af &ldquo;kontakter&rdquo;.</p>
+<p>Her en simpel kontakt som skal være &ldquo;til&rdquo; for at aktivere en magnet.</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/switch0.png" /></p>
+<p>Her et kredsløb med to kontakter hvor begge input skal være &ldquo;til&rdquo; for at lampen lyser.</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/switch1.png" /></p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/switch2.png" /></p>
+<p>Og her et kredsløb med to kontakter hvor blot en af kontakterne skal være &ldquo;til&rdquo; for at lampen lyser.</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/switch3.png" /></p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/switch4.png" /></p>
+<p>(Alle tegninger er fra den forrygende bog <a href="https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319">Code: The Hidden Language of Computer Hardware and Software</a> af Charles Petzold som i den grad kan anbefales hvis du vil vide mere om hvordan en computer/cpu fungerer.)</p>
+<h3 id="rel">Relæ</h3>
+<p>Bell Laboratories relay computer for U.S. Army (1946)</p>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bell_Laboratories_relay_computer_for_U.S._Army_%281946%29.jpg/1200px-Bell_Laboratories_relay_computer_for_U.S._Army_%281946%29.jpg' width='300' /> </p>
+
+<h3 id="vakuumrr">Vakuumrør</h3>
+<p>Forskellige typer af vakuumrør</p>
+<p style='text-align: center'><img style='width:80%; max-width:400px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Elektronenroehren-auswahl.jpg/580px-Elektronenroehren-auswahl.jpg' width='300' /> </p>
+
+<h3 id="transistor">Transistor</h3>
+<p>I 1950&rsquo;erne blev &ldquo;kontakterne&rdquo; digitale. Se <a href="https://www.youtube.com/watch?v=U4XknGqr3Bo">denne gode dokumentar</a> om opfindelsen af transitoreren</p>
+<p style='text-align: center'><img style='width:80%; max-width:300px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Transistorer_%28cropped%29.jpg/340px-Transistorer_%28cropped%29.jpg' width='300' /> </p>
+
+<h2 id="logiske-kredslb">Logiske kredsløb</h2>
+<p>Logiske kredsløb er grundlaget for alt computer teknologi, og gør det muligt at regne og huske.</p>
+<ul>
+<li>NOT</li>
+<li>AND</li>
+<li>OR</li>
+<li>XOR</li>
+<li>NAND</li>
+<li>NOR</li>
+<li>XNOR</li>
+</ul>
+<h3 id="sandhedstabeller">Sandhedstabeller</h3>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/sandhedstabller.png" /></p>
+<p>Check <a href="https://csdemo.cronberg.dk/gates.html">https://csdemo.cronberg.dk/gates.html</a> så du kan se hvordan de fungerer.</p>
+<h3 id="gates-af-elektronik">Gates af elektronik</h3>
+<p>Alle gates er i virkeligheden ret simple rent elektronisk. En OR gates eksempelvis kan skabes af to transistorer.</p>
+<p><a href="https://www.electronics-tutorials.ws/logic/logic_3.html"><img alt="" src="https://www.electronics-tutorials.ws/wp-content/uploads/2018/05/logic-log44.gif" /></a></p>
+<h3 id="moores-lov"><a href="https://en.wikipedia.org/wiki/Moore%27s_law">Moores lov</a></h3>
+<p>Gordon E. Moore (Intel) forudsagde i 1970, at antallet af transistorer i processorer ville blive fordoble cirka hvert andet år. På det tidspunkt kunne man proppe omkring et par tusinde transistorer i en chip.
+Hans forudsigelser har holdt nogenlunde stik i halvtreds år, men nu begynder det at knibe. Komponenterne bliver så små at man har svært ved at holde styr på elektronerne.</p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Moore%27s_Law_Transistor_Count_1971-2018.png/880px-Moore%27s_Law_Transistor_Count_1971-2018.png"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Moore%27s_Law_Transistor_Count_1971-2018.png/880px-Moore%27s_Law_Transistor_Count_1971-2018.png" /></a></p>
+<p>Dog er der nye spændende materialer på vej som både vil øje antallet af transistorer igen, og samtidigt gøre kredsløb mere stabile og mindre varme. Især <a href="https://en.wikipedia.org/wiki/Graphene">Grafen/Graphene</a> er meget omtalt pt. Det er en form for carbon med kun et lag atomer, og er ufatteligt stærk. De første batterier er begyndt at dukke op i 2020 (<a href="https://www.youtube.com/watch?v=dnE1nO6o-do">https://www.youtube.com/watch?v=dnE1nO6o-do</a>).</p>
+<h3 id="lidt-historie">Lidt historie</h3>
+<p>Check lige <a href="https://en.wikipedia.org/wiki/George_Boole">George Boole</a> (1815-1864) - ham alle IT udviklere bør kende til. 
+  - Far til boolsk algebra 
+    - Logiske beregninger/formler med klasser/set af elementer (ikke tal) og operatorer som eksempelvis + (or), x (and) og 1 (not)</p>
+<p>Og check <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> (1916-2001), som videre udviklede George Boole&rsquo;s tanker til elektroniske kredsløb omkring 1937.</p>
+<p>Og medens du er igang - <a href="https://en.wikipedia.org/wiki/John_Bardeen">John Bardeen</a> (1908-1991), <a href="https://en.wikipedia.org/wiki/William_Shockley">William Bradford Shockley</a> (1910-1989) and <a href="https://en.wikipedia.org/wiki/Walter_Houser_Brattain">Walter Houser Brattain</a> (1902-1987) - som fik Nobel prisen i Fysik i 1956 for deres arbejde indenfor halvledere og transitorer.</p>
+<p>Og sluttelig <a href="https://en.wikipedia.org/wiki/Jack_Kilby">Jack Kilby</a> (1923-2005) som opfandt IC kredse i 1950&rsquo;erne (Nobel prisen i fysik i 2000).
+- <a href="https://da.wikipedia.org/wiki/George_Boole">George Boole</a>
+- <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a></p>
+<h3 id="beregning-med-logiske-kredslb">Beregning med logiske kredsløb</h3>
+<p>Når først man har adgang til forskellige logiske kredsløb kan man foretage alle typer af beregninger - startende med at lægge to bit sammen uden mente</p>
+<p><a href="https://csdemo.cronberg.dk/halfadder.html">https://csdemo.cronberg.dk/halfadder.html</a></p>
+<p>og to bit sammen med mente</p>
+<p><a href="https://csdemo.cronberg.dk/fulladder.html">https://csdemo.cronberg.dk/fulladder.html</a></p>
+<p>Og hvis man kan lægge to bit sammen kan man lægge tre bit sammen, og fire bit sammen, og &hellip;</p>
+<h3 id="alu-arithmetic-logic-unit">ALU (Arithmetic logic unit)</h3>
+<p>Er komponenten i en processor som typisk foretager beregninger, logiske operationer og sammenligninger</p>
+<p>Her en SN74A181N.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:SN74S181N.JPG"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/SN74S181N.JPG/440px-SN74S181N.JPG" /></a></p>
+<p>Her er <a href="http://ee-classes.usc.edu/ee459/library/datasheets/DM74LS181.pdf">datasheet</a> for kredsen, og her skemaet for samme - bemærk de mange gates.</p>
+<p><a href="https://commons.wikimedia.org/wiki/File:74181aluschematic.png"><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/74181aluschematic.png/800px-74181aluschematic.png" /></a></p>
+<h2 id="hukommelse">Hukommelse</h2>
+<p>Kombinationen af logiske kredsløb (og typisk en clock) kan skabe hukommelse - <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)">der er mange forskellige typer</a>.</p>
+<p>Kredsløb bruges til små registre, RAM og ROM mv</p>
+<h3 id="or-latch">OR Latch</h3>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/orlatch.png" /></p>
+<h3 id="set-reset-and-or-latch">Set Reset AND-OR latch</h3>
+<p>En af de mere simple Set Reset latch er <a href="https://en.wikipedia.org/wiki/Flip-flop_(electronics)#SR_AND-OR_latch">SR AND-OR latch&rsquo;en</a></p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/andorlatch.png" /></p>
+<p>Den kan du lege med på <a href="https://csdemo.cronberg.dk/srandorlatch.html">CS Demo</a></p>
+<h3 id="ram-intro">RAM intro</h3>
+<p>RAM er opbygget således, at en konkret adresse indeholder en værdi - så en 8 bit RAM kunne se således ud.</p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/introprog/ram.png" /></p>
+<p>Når man benytter variabler i programmer er navnene på variablerne i virkeligheden blot en reference til en adresse i hukommelsen.</p>
+<p>Prøv selv på <a href="https://csdemo.cronberg.dk/ram.html">https://csdemo.cronberg.dk/ram.html</a>.</p>
+<h2 id="hjertet-i-en-cpu-clock">Hjertet i en CPU (clock)</h2>
+<p>En CPU har en eller flere clock-kredsløb som sørger for at styre og time afvikling af operationer.</p>
+<p>I sin helt simple form bruges en timer-chip eller en krystal.</p>
+<h3 id="hertz">Hertz</h3>
+<p>Hertz måler frekens - 1 Hz = 1 slag i sekundet</p>
+<table>
+<thead>
+<tr>
+<th>Forkortelse</th>
+<th>Beskrivelse</th>
+<th>hertz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hz</td>
+<td>hertz</td>
+<td>1</td>
+</tr>
+<tr>
+<td>kHz</td>
+<td>kilohertz</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>mHz</td>
+<td>megahertz</td>
+<td>1.000.000</td>
+</tr>
+<tr>
+<td>gHz</td>
+<td>gigahertz</td>
+<td>1.000.000.000</td>
+</tr>
+<tr>
+<td>## En SAP (simple as possible) CPU</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Skabt af Albert Paul Malvino i bogen <a href="https://www.amazon.com/Digital-computer-electronics-Albert-Malvino/dp/0070398615">Digital computer electronics</a></p>
+<p><img alt="" src="https://1.bp.blogspot.com/-jcMswG3yvwo/VmacKcGNGcI/AAAAAAAAAw4/GO51tD-s75g/s640/image1.jpeg" /></p>
+<p><a href="https://deeprajbhujel.blogspot.com/2015/12/sap-1-architecture.html">Ref</a></p>
+<ul>
+<li><a href="https://eater.net/8bit">Ben Eater&rsquo;s 8 bit computer</a></li>
+</ul>
+<h3 id="michells-sap1-simulering">Michells SAP1 simulering</h3>
+<p>Du kan finde en simulering af SAP1 på <a class="magiclink magiclink-github magiclink-repository" href="https://github.com/devcronberg/sap-cpu" title="GitHub Repository: devcronberg/sap-cpu">devcronberg/sap-cpu</a></p>
+<p><img alt="" src="http://cdn.cronberg.dk/kurser/cs/sap_gif.gif" /></p>
+<p>Det som er allervigtigst at forstå, er hvordan registrer og ALU kan påvirkes via kontrollinjer, og at disse kan påvirkes både manuelt samt gennem binære værdier.</p>
+<h3 id="opkoder-og-maskinkode">opkoder og maskinkode</h3>
+<p>På sitet findes andre versioner af CPU&rsquo;en så det er nemmere at forstå</p>
+<ul>
+<li>Registre</li>
+<li>ALU</li>
+<li>RAM</li>
+<li>Kontrollinjer</li>
+<li>Mikroinstruktioner</li>
+<li>Opkoder</li>
+</ul>
+<p>Den sidste version af computeren introducerer Assembler som en direkte oversættelse af opkoder til assembler.</p>
+<h3 id="altair">Altair</h3>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Altair_8800_Computer.jpg/600px-Altair_8800_Computer.jpg' width='300' /> </p>
+
+<p><a href="https://en.wikipedia.org/wiki/Altair_8800">Ref</a></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Altair_8800">Altair 8800</a></li>
+<li><a href="https://s2js.com/altair/">Altair 8800 simulator</a></li>
+<li><a href="http://www.classiccmp.org/dunfield/altair/d/88opman.pdf">Instruktion</a></li>
+</ul>
+<h3 id="lg-2-to-tal-sammen-fra-ram">Læg 2 to tal sammen fra RAM</h3>
+<table>
+<thead>
+<tr>
+<th>nr</th>
+<th>kommando</th>
+<th>værdi</th>
+<th>kommentar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000000</td>
+<td>LDA</td>
+<td>00111010</td>
+<td>Load til A fra 128</td>
+</tr>
+<tr>
+<td>00000001</td>
+<td>-</td>
+<td>10000000</td>
+<td></td>
+</tr>
+<tr>
+<td>00000010</td>
+<td>-</td>
+<td>00000000</td>
+<td></td>
+</tr>
+<tr>
+<td>00000011</td>
+<td>MOV</td>
+<td>01000111</td>
+<td>Flyt A -&gt; B</td>
+</tr>
+<tr>
+<td>00000100</td>
+<td>LDA</td>
+<td>00111010</td>
+<td>Load til A fra 129</td>
+</tr>
+<tr>
+<td>00000101</td>
+<td>-</td>
+<td>10000001</td>
+<td></td>
+</tr>
+<tr>
+<td>00000110</td>
+<td>-</td>
+<td>00000000</td>
+<td></td>
+</tr>
+<tr>
+<td>00000111</td>
+<td>ADD</td>
+<td>10000000</td>
+<td>Læg A og B sammen</td>
+</tr>
+<tr>
+<td>00001000</td>
+<td>STA</td>
+<td>00110010</td>
+<td>Flyt A til 130</td>
+</tr>
+<tr>
+<td>00001001</td>
+<td>-</td>
+<td>10000010</td>
+<td></td>
+</tr>
+<tr>
+<td>00001010</td>
+<td>-</td>
+<td>00000000</td>
+<td></td>
+</tr>
+<tr>
+<td>00001011</td>
+<td>JMP</td>
+<td>11000011</td>
+<td>Jump til 0</td>
+</tr>
+<tr>
+<td>00001100</td>
+<td>-</td>
+<td>00000000</td>
+<td></td>
+</tr>
+<tr>
+<td>00001101</td>
+<td>-</td>
+<td>00000000</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="digirule2">Digirule2</h2>
+<p>Oprindeligt fra <a href="https://www.kickstarter.com/projects/1897710270/digirule2-code-in-binary-like-its-1975">KickStarter</a> - nu direkte hos <a href="https://bradsprojects.com/digirule2/">Bradley Slattery</a></p>
+<p style='text-align: center'><img style='width:80%; max-width:500px' src='https://ksr-ugc.imgix.net/assets/021/353/656/3cec2d52c66623d3a470c435948b8518_original.jpg?ixlib=rb-1.1.0&crop=faces&w=1552&h=873&fit=crop&v=1528014597&auto=format&frame=1&q=92&s=b8c948f082dae80f1c32194543fdf08a' width='300' /> </p>
+
+<h3 id="lg-2-to-tal-sammen-fra-ram_1">Læg 2 to tal sammen fra RAM</h3>
+<table>
+<thead>
+<tr>
+<th>nr</th>
+<th>kommando</th>
+<th>værdi</th>
+<th>kommentar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00000000</td>
+<td>COPYLR</td>
+<td>00000011</td>
+<td>copy 2 til ram pos 20</td>
+</tr>
+<tr>
+<td>00000001</td>
+<td>2</td>
+<td>00000010</td>
+<td></td>
+</tr>
+<tr>
+<td>00000010</td>
+<td>20</td>
+<td>00010100</td>
+<td></td>
+</tr>
+<tr>
+<td>00000011</td>
+<td>COPYLR</td>
+<td>00000011</td>
+<td>copy 2 til ram pos 21</td>
+</tr>
+<tr>
+<td>00000100</td>
+<td>2</td>
+<td>00000010</td>
+<td></td>
+</tr>
+<tr>
+<td>00000101</td>
+<td>21</td>
+<td>00010101</td>
+<td></td>
+</tr>
+<tr>
+<td>00000110</td>
+<td>COPYRA</td>
+<td>00000110</td>
+<td>copy ram pos 20 til a</td>
+</tr>
+<tr>
+<td>00000111</td>
+<td>20</td>
+<td>00010100</td>
+<td></td>
+</tr>
+<tr>
+<td>00001000</td>
+<td>ADDRA</td>
+<td>00001001</td>
+<td>add ram pos 21 til a</td>
+</tr>
+<tr>
+<td>00001001</td>
+<td>21</td>
+<td>00010101</td>
+<td></td>
+</tr>
+<tr>
+<td>00001010</td>
+<td>COPYAR</td>
+<td>00000101</td>
+<td>copy a til 255 (out)</td>
+</tr>
+<tr>
+<td>00001011</td>
+<td>255</td>
+<td>11111111</td>
+<td></td>
+</tr>
+<tr>
+<td>00001100</td>
+<td>jump</td>
+<td>00011100</td>
+<td>uendeligt loop</td>
+</tr>
+<tr>
+<td>00001101</td>
+<td>12</td>
+<td>00001100</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="moderne-processorer">Moderne processorer</h3>
+<ul>
+<li>X86/X64 arkitektur</li>
+<li><a href="https://en.wikipedia.org/wiki/X86_instruction_listings">X86 instruktioner</a></li>
+<li>ARM arkitektur</li>
+</ul>
+<h2 id="kompilere-og-programmeringssprog">Kompilere og programmeringssprog</h2>
+<p>CPU niveau
+  - Maskinkode</p>
+<p>Lavniveau<br />
+  - Maskinsprog Assembler</p>
+<p>Højniveau</p>
+<ul>
+<li>COBOL</li>
+<li>C-sprog</li>
+<li>
+<p>.NET / JAVA</p>
+</li>
+<li>
+<p>Høj niveau sprog er typisk abstraktion på abstraktion på abstraktion</p>
+</li>
+<li>
+<p>Sprog der kompilere til et andet sprog der kompileres til et tredje sprog </p>
+</li>
+<li>
+<p>Kompilering til eksekvebar kode kaldes &ldquo;kompilering&rdquo; (compile) eller &ldquo;byggesekvens&rdquo; (build)</p>
+</li>
+<li>Kompilering til andre sprog kaldes &ldquo;transpilering&rdquo;</li>
+</ul>
+<p>Prøv det selv på <a href="https://csdemo.cronberg.dk/compile.html">https://csdemo.cronberg.dk/compile.html</a>.</p>
+<h3 id="programmeringssprog">Programmeringssprog</h3>
+<ul>
+<li>1940: Assembly</li>
+<li>1950-60: COBOL, FORTRAN, Basic</li>
+<li>1970: Logo, Pascal, C, Smalltalk</li>
+<li>1980: C++, Eiffel, Perl, </li>
+<li>1990: Python, Java, Delphi, JavaScript, Ruby</li>
+<li>2000: C#, F#, Ruby on Rails </li>
+<li>2010: Dart</li>
+<li>2012: TypeScript</li>
+</ul>
+<p>De mest populære programmeringssprog - se <a href="https://insights.stackoverflow.com/survey/2019#technology-_-programming-scripting-and-markup-languages">StackOvewflow</a></p>
+<p>En del danskere har bidraget med programmeringssprog 
+  - c++ (Bjarne Stroustrup)
+  - c#, delphi, pascal (Anders Hejlsberg)
+  - php (Rasmus Lerdorf)
+  - dart (Lars Bak og Kasper Lund)</p>
+<h2 id="syntaks-og-instruktioner">Syntaks og instruktioner</h2>
+<ul>
+<li>De fleste sprog er forskellige i syntaks</li>
+<li>Alle består af instruktioner af en eller anden art</li>
+<li>Kildekode</li>
+<li>Opmærkninger</li>
+<li>Grafisk</li>
+<li>Instruktioner er defineret på flere måder</li>
+<li>Linjeskift</li>
+<li>Semikolon</li>
+<li>Tabulering</li>
+<li>Programpointer</li>
+<li>Flow i koden</li>
+<li>Instruktion til instruktion</li>
+<li>Linje til linje</li>
+<li>Funktion til funktion</li>
+</ul>
+<h3 id="eksempler-pa-syntaks">Eksempler på syntaks</h3>
+<h4 id="maskinkode">Maskinkode</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/1machinecode.png' width='300' /> </p>
+
+<h4 id="assembler">Assembler</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/2Assembly_Language.png' width='300' /> </p>
+
+<h4 id="basic">Basic</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/3basic.png' width='300' /> </p>
+
+<h4 id="cobol">Cobol</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/4cobol.png' width='300' /> </p>
+
+<h4 id="fortran">Fortran</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/5fortran.png' width='300' /> </p>
+
+<h4 id="pascal">Pascal</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/6pascal.png' width='300' /> </p>
+
+<h4 id="python">Python</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/7python.png' width='300' /> </p>
+
+<h4 id="smalltalk">Smalltalk</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/8smalltalk.png' width='300' /> </p>
+
+<h4 id="c">C++</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/9cplus.png' width='300' /> </p>
+
+<h4 id="java">Java</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/10java.png' width='300' /> </p>
+
+<h4 id="javascript">JavaScript</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/11javascript.png' width='300' /> </p>
+
+<h4 id="f">F</h4>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/12fsharp.png' width='300' /> </p>
+
+<h3 id="ruby">Ruby</h3>
+<p style='text-align: left'><img style='width:80%; max-width:300px' src='http://cdn.cronberg.dk/kurser/introprog/13ruby.png' width='300' /> </p>
+
+<h2 id="grundlggende-programmering">Grundlæggende programmering</h2>
+<p>De fleste programmeringssprog har features til fælles</p>
+<ul>
+<li>Variabler</li>
+<li>Opbevaring af midlertidige værdier<ul>
+<li>Jf tidligere sektion om RAM</li>
+</ul>
+</li>
+<li>Flow instruktioner</li>
+<li>løkker<ul>
+<li>loop et givet antal gange</li>
+</ul>
+</li>
+<li>betingelser<ul>
+<li>hvis et eller andet er sandt så&hellip; ellers....</li>
+</ul>
+</li>
+<li>Funktioner</li>
+<li>Samling af instruktioner der nemt kan afvikles<ul>
+<li>med/uden argumenter</li>
+<li>med/uden returværdi</li>
+</ul>
+</li>
+</ul>
+<h3 id="typer-af-applikationer">Typer af applikationer</h3>
+<ul>
+<li>Konsol</li>
+<li>Lokale GUI applikationer</li>
+<li>Web applikationer</li>
+<li>Web/Desktop</li>
+<li>Electron</li>
+<li>SOA</li>
+<li>Service-Oriented Architecture </li>
+<li>Mobile applikationer</li>
+<li>Embedded  </li>
+<li>PLC</li>
+<li>Espruino, Tessel.IO</li>
+<li>Rasberry Pie, Netdurino</li>
+<li>API / SDK</li>
+<li>application programming interface</li>
+<li>Test</li>
+<li>Unit test</li>
+<li>UI Test</li>
+<li>Integration test</li>
+</ul>
+<h2 id="udviklingsvrktjer">Udviklingsværktøjer</h2>
+<ul>
+<li>I de fleste programmeringssprog er kildekoden ren tekst</li>
+<li>Notepad</li>
+<li>Udviklingsmiljøer giver den bedste produktivitet</li>
+<li>”Visuel” kode</li>
+<li>Løbende baggrundskompilering</li>
+<li>Hjælp til kodeskrivning</li>
+<li>Integration af forskellige værktøjer</li>
+<li>Test</li>
+<li>Deployment</li>
+<li>Nogle af de kendte</li>
+<li>Visual Studio (.NET og meget meget)</li>
+<li>Visual Studio Code</li>
+<li>Eclipse (java +)</li>
+<li>Netbeans (java, c++, mv)</li>
+<li>gEdit (linux)</li>
+</ul>
+<h2 id="versionsource-control">Version/source control</h2>
+<p>Source control - også kaldet version styring - benyttes primært til styring af rettelser i kode. I dag kan de fleste systemer håndterer</p>
+<ul>
+<li>Rettelser</li>
+<li>Hvad er rettet</li>
+<li>Hvem har rettet</li>
+<li>Hvornår er der rettet</li>
+<li>Hvorfor er der rettet</li>
+<li>Versionstyring</li>
+<li>Branching</li>
+<li>Projektstyring</li>
+<li>Fejlrapportering </li>
+<li>Styring og automatisering af build</li>
+</ul>
+<p>Af kendte systemer findes</p>
+<ul>
+<li>Git</li>
+<li>Subversion</li>
+<li>Mercurial</li>
+</ul>
+<p>og de fleste vælge at have sin &ldquo;kode i skyen&rdquo; - eksempelvis hos</p>
+<ul>
+<li>GitHub</li>
+<li>BitBucket</li>
+<li>AWS CodeCommit</li>
+<li>Microsoft Team Foundation Server</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Michell Cronberg
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:michell@cronbeg.dk" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://goo.gl/iVjaqF" target="_blank" rel="noopener" title="goo.gl" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+     <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.prune", "navigation.tracking", "content.code.annotate", "content.code.copy", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+      
+    
+      <script src="assets/javascripts/bundle.ce72ebac.min.js"></script>
+      
+        <script src="javascripts/tablesort.min.js"></script>
+      
+        <script src="javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

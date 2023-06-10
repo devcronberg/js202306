@@ -1,0 +1,148 @@
+<style>
+    a {
+        color: black;
+    }
+</style>
+<div
+    style="
+        background-color: white;
+        font-family: 'Segoe UI', Verdana, sans-serif;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: 2%;
+    "
+>
+    <div>
+        <textarea autofocus id="txt" rows="5" cols="80%"></textarea>
+    </div>
+    <div style="margin-top: 20px">
+        <select id="eksempler">
+            <option>Vælg evt et eksempel</option>
+            <option>Skriv en javascript funktion</option>
+            <option>Forklar et js koncept</option>
+            <option>Oversæt kode</option>
+            <option>Hovedstæderne i norden</option>
+            <option>Hvor langt er der til månen</option>
+            <option>Skriv en lille histore om en mariehøne</option>
+        </select>
+    </div>
+    <button
+        id="btn"
+        style="margin-top: 20px; margin-bottom: 20px"
+        onclick="getAnswer()"
+    >
+        Find svar
+    </button>
+    <div>
+        <textarea readonly id="answer" rows="15" cols="80%"></textarea>
+    </div>
+    <button
+        id="wrap"
+        style="margin-top: 20px; margin-bottom: 20px"
+        onclick="wrap()"
+    >
+        Wrap tekst
+    </button>
+</div>
+
+<script>
+    const API_KEY = "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";
+    var QUESTION =
+        "Skriv to javascript funktioner med kommentarer til at lægge to tal sammen. Den ene funktion skal være en traditionel js funktion, og den anden skal være en lambda funktion. Tilføj fejlhåndtering og et par test der viser hvordan funktionerne skal kaldes.";
+    //"Write two js functions with comments to add two numbers. One function must be a traditional js function and the other a lambda function. Make sure to handle any errors and provide a few tests to show how to call the methods.";
+
+    document.getElementById("txt").focus();
+    unwrap();
+    // document.addEventListener("keyup", (event) => {
+    //     if (event.keyCode === 13) {
+    //         getAnswer();
+    //     }
+    // });
+
+    document.getElementById("eksempler").onchange = function () {
+        let index = document.getElementById("eksempler").selectedIndex;
+        switch (index) {
+            case 1:
+                document.getElementById("txt").value =
+                    "Skriv to javascript funktioner med kommentarer til at lægge to tal sammen. Den ene funktion skal være en traditionel js funktion, og den anden skal være en lambda funktion. Tilføj fejlhåndtering og et par test der viser hvordan funktionerne skal kaldes.";
+                break;
+            case 2:
+                document.getElementById("txt").value =
+                    "Forklar hvordan hoisting fungerer i js og lav et eksempel";
+                break;
+            case 3:
+                document.getElementById("txt").value =
+                    "Her er en metode i C#\n\nstring Up(string txt)\n{\n\treturn txt.toUpper();\n}\n\nVil du venligst oversætte den til Javascript, TypeScript og Python - med kommentarer";
+                break;
+
+            case 4:
+                document.getElementById("txt").value =
+                    "Lav en liste over hovedstæderne i norden og angiv antal indbyggere. Listen skal være sorteret efter det største antal indbyggere. Tilføj også listen i json.";
+                break;
+            case 5:
+                let d = new Date();
+                let t =
+                    d.getDate() +
+                    "/" +
+                    (d.getMonth() + 1) +
+                    "-" +
+                    d.getFullYear();
+                document.getElementById("txt").value =
+                    "Hvor langt er der til månen fra Odense d. " +
+                    t +
+                    ", og hvor lang tid vil det tage at komme dertil med 130 km i timen og med 45 km i timen.";
+                break;
+            case 6:
+                document.getElementById("txt").value =
+                    "Skriv en lille histrie om mariehønen Bent som er forelsket i koen Bente.";
+                break;
+            default:
+                break;
+        }
+        getAnswer();
+    };
+
+    function wrap() {
+        document.getElementById("answer").style = "";
+        document.getElementById("wrap").text = "Unwrap tekst";
+        document.getElementById("wrap").onclick = unwrap;
+    }
+
+    function unwrap() {
+        document.getElementById("answer").style =
+            "overflow: scroll; white-space: pre; overflow-wrap: normal";
+        document.getElementById("wrap").onclick = wrap;
+        document.getElementById("wrap").text = "Wrap tekst";
+    }
+
+    function getAnswer() {
+        document.getElementById("btn").disabled = true;
+        document.getElementById("answer").value = "";
+        QUESTION = document.getElementById("txt").value;
+        fetch("https://api.openai.com/v1/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${API_KEY}`,
+            },
+            body: JSON.stringify({
+                prompt: QUESTION,
+                model: "text-davinci-003",
+                max_tokens: 2000,
+                temperature: 0.9,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                document.getElementById("answer").value =
+                    data.choices[0].text.slice(2);
+                console.log(data);
+                document.getElementById("btn").disabled = false;
+            })
+            .catch((error) => {
+                document.getElementById("answer").value = error;
+                console.log(error);
+                document.getElementById("btn").disabled = false;
+            });
+    }
+</script>
